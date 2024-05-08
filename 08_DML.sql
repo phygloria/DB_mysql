@@ -18,7 +18,7 @@ insert into tbl_menu (
 insert into tbl_menu (
 		menu_name, menu_price, category_code, orderable_status 
 	)values(
-	'빽사이즈 아메리카노', 'y', 7, 3000);
+	'빽사이즈 아메리카노', 'y', 7, 3000); -- 카테고리 순서랑 맞춰야 적용된다.
 
 	
 select * from tbl_menu ;
@@ -27,7 +27,7 @@ select * from tbl_menu ;
 -- multi insert
 insert into tbl_menu 	
 	values (null, '해장국', 8500, 4, 'Y'),
-			(null, '뼈다귀 해장국', 8500, 4, 'Y'),
+		(null, '뼈다귀 해장국', 8500, 4, 'Y'),
 			(null, '왕뚝배기 해장국', 8500, 4, 'Y');
 			
 select * from tbl_menu;
