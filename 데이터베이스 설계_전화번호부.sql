@@ -33,7 +33,7 @@ create table if not exists call_list
 CREATE TABLE IF NOT EXISTS call_number
 (
     call_code int primary key auto_increment comment '전화번호코드',
-    user_no int  comment '유저번호',
+    user_no int unique comment '유저번호',
     call_name varchar(10) not null comment '전화번호 구분',
     call_number varchar(20) not null comment '전화번호',
     main_call char check(main_call in ('y','n')) comment '상태(대표번호)',
@@ -47,8 +47,8 @@ CREATE TABLE IF NOT EXISTS call_number
 
 create table if not exists call_link
 (
-	call_list_code INT COMMENT '전화번호부 코드',	
-	call_code INT COMMENT '전화번호 코드',
+	call_list_code INT AUTO_INCREMENT COMMENT '전화번호부 코드',	
+	call_code INT AUTO_INCREMENT COMMENT '전화번호 코드',
 	CONSTRAINT fk_call_list_code FOREIGN KEY (call_list_code) REFERENCES call_list (call_list_code),
 	CONSTRAINT fk_call_code FOREIGN KEY (call_code) REFERENCES call_number (call_code)
 
